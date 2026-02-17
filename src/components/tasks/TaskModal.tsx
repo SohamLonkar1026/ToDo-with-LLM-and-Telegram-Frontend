@@ -27,6 +27,9 @@ export default function TaskModal({ isOpen, onClose, onSuccess }: TaskModalProps
         e.preventDefault();
         setLoading(true);
         try {
+            console.log("[DEBUG_DASHBOARD_CREATE] Raw Input:", formData.dueDate);
+            console.log("[DEBUG_DASHBOARD_CREATE] Sending ISO:", new Date(formData.dueDate).toISOString());
+
             await api.post('/tasks', {
                 ...formData,
                 dueDate: new Date(formData.dueDate).toISOString()

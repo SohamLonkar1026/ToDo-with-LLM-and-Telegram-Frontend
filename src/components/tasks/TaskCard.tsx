@@ -21,6 +21,13 @@ interface TaskCardProps {
 export default function TaskCard({ task, onComplete, onDelete }: TaskCardProps) {
     const isCompleted = task.status === 'COMPLETED';
 
+    // Debug Logging for first task only (to avoid spam)
+    if (Math.random() < 0.05) { // Sample ~5% or remove check for full spam
+        console.log("[DEBUG_DASHBOARD_RENDER] Received:", task.dueDate);
+        console.log("[DEBUG_DASHBOARD_RENDER] Interpreted:", new Date(task.dueDate));
+        console.log("[DEBUG_DASHBOARD_RENDER] Formatted:", format(new Date(task.dueDate), 'MMM d, h:mm a'));
+    }
+
     const priorityColors = {
         LOW: 'bg-green-900 text-green-300',
         MEDIUM: 'bg-yellow-900 text-yellow-300',
