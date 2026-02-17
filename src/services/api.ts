@@ -16,9 +16,9 @@ api.interceptors.response.use(
     (response) => response,
     (error) => {
         if (error.response?.status === 401) {
-            localStorage.removeItem('token');
-            // Ideally redirect to login, but handling via context/state is better
-            // window.location.href = '/login'; 
+            console.warn("Unauthorized request - 401");
+            // Do NOT automatically remove token. Let the UI handle it or user explicitly logout.
+            // localStorage.removeItem('token'); 
         }
         return Promise.reject(error);
     }
