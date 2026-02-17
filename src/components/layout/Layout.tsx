@@ -20,7 +20,7 @@ export default function Layout() {
             <Sidebar isOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
 
             {/* Main Content Area */}
-            <div className="flex-1 w-full lg:ml-64 flex flex-col">
+            <div className="flex-1 w-full flex flex-col">
                 <Topbar onMenuClick={() => setIsSidebarOpen(true)} />
 
                 <main className="flex-1 p-4 lg:p-8 overflow-y-auto">

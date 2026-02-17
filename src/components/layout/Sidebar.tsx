@@ -17,7 +17,7 @@ export default function Sidebar({ isOpen, setIsSidebarOpen }: { isOpen: boolean;
                 border-r border-slate-200 dark:border-slate-800 
                 transform transition-transform duration-300 ease-in-out
                 ${isOpen ? "translate-x-0" : "-translate-x-full"}
-                lg:translate-x-0 lg:static lg:w-64
+                lg:translate-x-0 lg:static lg:w-64 lg:flex-shrink-0
                 flex flex-col
             `}>
                 <div className="p-6">
