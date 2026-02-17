@@ -5,14 +5,21 @@ import { useNotifications } from '../../context/NotificationContext';
 import { useState } from 'react';
 import TelegramLinkModal from './TelegramLinkModal';
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, setIsSidebarOpen }: { isOpen: boolean; setIsSidebarOpen: (open: boolean) => void }) {
     const { logout } = useAuth();
     const { unreadCount } = useNotifications();
     const [isTelegramModalOpen, setIsTelegramModalOpen] = useState(false);
 
     return (
         <>
-            <aside className="fixed left-0 top-0 bottom-0 w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col z-20 transition-colors duration-300">
+            <aside className={`
+                fixed inset-y-0 left-0 z-40 w-64 bg-white dark:bg-slate-900 
+                border-r border-slate-200 dark:border-slate-800 
+                transform transition-transform duration-300 ease-in-out
+                ${isOpen ? "translate-x-0" : "-translate-x-full"}
+                lg:translate-x-0 lg:static lg:w-64
+                flex flex-col
+            `}>
                 <div className="p-6">
                     <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-600 bg-clip-text text-transparent">
                         AI-MOM

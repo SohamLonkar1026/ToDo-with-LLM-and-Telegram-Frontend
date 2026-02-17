@@ -29,7 +29,10 @@ export default function TaskCard({ task, onComplete, onDelete }: TaskCardProps) 
     };
 
     return (
-        <Card className={`transition-all hover:border-slate-600 ${isCompleted ? 'opacity-60' : ''}`}>
+        <div className={`p-4 rounded-xl border transition-all hover:shadow-lg animate-fade-in w-full lg:max-w-2xl ${isCompleted
+            ? 'bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-800 opacity-75'
+            : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800'
+            }`}>
             <div className="flex items-start justify-between mb-2">
                 <div className="flex items-start gap-3">
                     <button
@@ -66,6 +69,6 @@ export default function TaskCard({ task, onComplete, onDelete }: TaskCardProps) 
                     <Trash2 className="w-4 h-4" />
                 </Button>
             </div>
-        </Card>
+        </div>
     );
 }
