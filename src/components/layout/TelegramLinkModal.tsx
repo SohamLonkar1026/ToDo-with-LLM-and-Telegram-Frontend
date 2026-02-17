@@ -121,14 +121,17 @@ export default function TelegramLinkModal({ isOpen, onClose }: TelegramLinkModal
                             </div>
                         </div>
 
-                        <div className="text-center space-y-2">
+                        <div className="mt-4 text-center">
+                            <p className="text-sm text-gray-500 mb-2">
+                                Bot Chat Link:
+                            </p>
                             <a
-                                href={`https://t.me/${import.meta.env.VITE_TELEGRAM_BOT_USERNAME || 'Aimom1121bot'}`}
+                                href="https://t.me/aimmom1212"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-blue-400 hover:text-blue-300 text-sm font-medium hover:underline"
+                                className="text-blue-500 hover:text-blue-600 underline font-medium"
                             >
-                                Open Telegram Bot
+                                https://t.me/aimmom1212
                             </a>
                         </div>
 
