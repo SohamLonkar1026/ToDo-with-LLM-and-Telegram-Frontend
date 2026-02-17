@@ -1,6 +1,5 @@
 import { format } from 'date-fns';
 import { CheckCircle, Circle, Trash2, Clock, AlertTriangle } from 'lucide-react';
-import Card from '../ui/Card';
 import Button from '../ui/Button';
 
 export interface Task {

@@ -29,6 +29,7 @@ export default function Sidebar({ isOpen, setIsSidebarOpen }: { isOpen: boolean;
                 <nav className="flex-1 px-4 py-4 space-y-2">
                     <NavLink
                         to="/dashboard"
+                        onClick={() => setIsSidebarOpen(false)}
                         className={({ isActive }) =>
                             `flex items-center gap-3 px-4 py-3 rounded-xl transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 ${isActive
                                 ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20 dark:shadow-blue-900/20'
@@ -42,6 +43,7 @@ export default function Sidebar({ isOpen, setIsSidebarOpen }: { isOpen: boolean;
 
                     <NavLink
                         to="/priority"
+                        onClick={() => setIsSidebarOpen(false)}
                         className={({ isActive }) =>
                             `flex items-center gap-3 px-4 py-3 rounded-xl transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 ${isActive
                                 ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20 dark:shadow-blue-900/20'
@@ -55,6 +57,7 @@ export default function Sidebar({ isOpen, setIsSidebarOpen }: { isOpen: boolean;
 
                     <NavLink
                         to="/daily"
+                        onClick={() => setIsSidebarOpen(false)}
                         className={({ isActive }) =>
                             `flex items-center gap-3 px-4 py-3 rounded-xl transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 ${isActive
                                 ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20 dark:shadow-blue-900/20'
@@ -68,6 +71,7 @@ export default function Sidebar({ isOpen, setIsSidebarOpen }: { isOpen: boolean;
 
                     <NavLink
                         to="/notifications"
+                        onClick={() => setIsSidebarOpen(false)}
                         className={({ isActive }) =>
                             `flex items-center gap-3 px-4 py-3 rounded-xl transition-all relative focus:outline-none focus:ring-2 focus:ring-blue-500 ${isActive
                                 ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/20 dark:shadow-blue-900/20'
