@@ -38,8 +38,7 @@ export default function TelegramLinkModal({ isOpen, onClose }: TelegramLinkModal
         }
     };
 
-    const botUsername = import.meta.env.VITE_TELEGRAM_BOT_USERNAME;
-    const telegramUrl = botUsername ? `https://t.me/${botUsername}` : null;
+
 
     if (!isOpen) return null;
 
@@ -123,20 +122,14 @@ export default function TelegramLinkModal({ isOpen, onClose }: TelegramLinkModal
                         </div>
 
                         <div className="text-center space-y-2">
-                            {telegramUrl ? (
-                                <a
-                                    href={telegramUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-400 hover:text-blue-300 text-sm font-medium hover:underline"
-                                >
-                                    Open Telegram Bot
-                                </a>
-                            ) : (
-                                <span className="text-slate-500 text-sm font-medium cursor-not-allowed" title="Bot not configured">
-                                    Bot Not Configured
-                                </span>
-                            )}
+                            <a
+                                href={`https://t.me/${import.meta.env.VITE_TELEGRAM_BOT_USERNAME || 'Aimom1121bot'}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-400 hover:text-blue-300 text-sm font-medium hover:underline"
+                            >
+                                Open Telegram Bot
+                            </a>
                         </div>
 
                         <div className="pt-4 border-t border-slate-800">
