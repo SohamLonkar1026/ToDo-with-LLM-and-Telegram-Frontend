@@ -22,7 +22,7 @@ export default function Sidebar({ isOpen, setIsSidebarOpen }: { isOpen: boolean;
             `}>
                 <div className="p-6">
                     <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-600 bg-clip-text text-transparent">
-                        AI-MOM
+                        AI-Task Reminder
                     </h1>
                 </div>
 
