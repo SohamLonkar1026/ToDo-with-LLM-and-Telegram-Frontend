@@ -172,7 +172,7 @@ export default function Settings() {
             setError(null);
             setSuccess(null);
 
-            await api.put('/api/settings/reminder-defaults', {
+            await api.put('/settings/reminder-defaults', {
                 defaultNotifyBeforeHours: notifyBeforeHours,
                 defaultNotifyPercentage: notifyPercentage,
                 defaultMinGapMinutes: minGapMinutes,
