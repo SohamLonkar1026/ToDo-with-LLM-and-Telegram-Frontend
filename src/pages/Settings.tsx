@@ -146,7 +146,7 @@ export default function Settings() {
             try {
                 setLoading(true);
                 setError(null);
-                const { data } = await api.get('/api/settings/reminder-defaults');
+                const { data } = await api.get('/settings/reminder-defaults');
                 setNotifyBeforeHours(data.defaultNotifyBeforeHours ?? []);
                 setNotifyPercentage(data.defaultNotifyPercentage ?? []);
                 setMinGapMinutes(data.defaultMinGapMinutes ?? 58);
