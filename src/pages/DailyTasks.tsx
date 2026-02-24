@@ -85,14 +85,19 @@ export default function DailyTasks() {
                 </div>
             ) : (
                 <div className="space-y-4">
-                    {tasks.map((task) => (
-                        <TaskCard
-                            key={task.id}
-                            task={task}
-                            onComplete={handleComplete}
-                            onDelete={handleDelete}
-                        />
-                    ))}
+                    {[...tasks]
+                        .sort((a, b) => {
+                            if (a.status === b.status) return 0;
+                            return a.status === 'PENDING' ? -1 : 1;
+                        })
+                        .map((task) => (
+                            <TaskCard
+                                key={task.id}
+                                task={task}
+                                onComplete={handleComplete}
+                                onDelete={handleDelete}
+                            />
+                        ))}
                 </div>
             )}
 

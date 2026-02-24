@@ -75,14 +75,19 @@ export default function Dashboard() {
                 </div>
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {tasks.map((task) => (
-                        <TaskCard
-                            key={task.id}
-                            task={task}
-                            onComplete={handleComplete}
-                            onDelete={handleDelete}
-                        />
-                    ))}
+                    {[...tasks]
+                        .sort((a, b) => {
+                            if (a.status === b.status) return 0;
+                            return a.status === 'PENDING' ? -1 : 1;
+                        })
+                        .map((task) => (
+                            <TaskCard
+                                key={task.id}
+                                task={task}
+                                onComplete={handleComplete}
+                                onDelete={handleDelete}
+                            />
+                        ))}
                 </div>
             )}
 
